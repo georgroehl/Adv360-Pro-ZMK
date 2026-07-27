@@ -1,3 +1,155 @@
+  select_mac: select_mac {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&bt BT_SEL 0>, <&to MAC_BASE>;
+  };
+
+  select_windows: select_windows {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&bt BT_SEL 1>, <&to WINDOWS_BASE>;
+  };
+
+  /*
+   * macOS ABC input sequences.
+   *
+   * A short delay keeps the dead key and following letter in order over
+   * Bluetooth. Shift-aware mod-morph behaviors in adv360.keymap choose
+   * between the lower- and uppercase versions.
+   */
+  mac_a_umlaut_lower: mac_a_umlaut_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp A>;
+  };
+
+  mac_a_umlaut_upper: mac_a_umlaut_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp LS(A)>;
+  };
+
+  mac_o_umlaut_lower: mac_o_umlaut_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp O>;
+  };
+
+  mac_o_umlaut_upper: mac_o_umlaut_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp LS(O)>;
+  };
+
+  mac_u_umlaut_lower: mac_u_umlaut_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp U>;
+  };
+
+  mac_u_umlaut_upper: mac_u_umlaut_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(U)>, <&kp LS(U)>;
+  };
+
+  mac_e_acute_lower: mac_e_acute_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(E)>, <&kp E>;
+  };
+
+  mac_e_acute_upper: mac_e_acute_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(E)>, <&kp LS(E)>;
+  };
+
+  mac_n_tilde_lower: mac_n_tilde_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(N)>, <&kp N>;
+  };
+
+  mac_n_tilde_upper: mac_n_tilde_upper {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LA(N)>, <&kp LS(N)>;
+  };
+
+  upper_ss: upper_ss {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LS(S)>, <&kp LS(S)>;
+  };
+
+  /*
+   * Windows US-International uses dead punctuation. These macros make the
+   * normal punctuation keys emit their literal character immediately.
+   * The Windows Fn layer still exposes the uncompleted dead keys on demand.
+   */
+  win_literal_apostrophe: win_literal_apostrophe {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp SQT>, <&kp SPACE>;
+  };
+
+  win_literal_quote: win_literal_quote {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp DQT>, <&kp SPACE>;
+  };
+
+  win_literal_grave: win_literal_grave {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp GRAVE>, <&kp SPACE>;
+  };
+
+  win_literal_tilde: win_literal_tilde {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp TILDE>, <&kp SPACE>;
+  };
+
+  win_literal_caret: win_literal_caret {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp CARET>, <&kp SPACE>;
+  };
+
   macro_quotes: macro_quotes {
     compatible = "zmk,behavior-macro";
     label = "macro_quotes";
